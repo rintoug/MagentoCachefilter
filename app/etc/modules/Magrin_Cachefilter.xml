@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- app/etc/modules/Magrin_Cachefilter.xml -->
+<config>
+    <modules>		
+        <Magrin_Cachefilter>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Magrin_Cachefilter>
+    </modules>
+</config>

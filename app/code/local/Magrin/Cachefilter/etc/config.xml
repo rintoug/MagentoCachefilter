@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--app/code/local/Magrin/Cachefilter/etc/config.xml -->
+<config>
+    <modules>
+        <Magrin_Cachefilter>
+            <version>0.1.1</version>
+        </Magrin_Cachefilter>
+    </modules>
+  
+    <global>
+        <models>
+            <core>
+                <rewrite>
+                    <design_package>Magrin_Cachefilter_Model_Design_Package</design_package>										
+                </rewrite>
+            </core>			
+        </models>
+    </global>	
+</config>

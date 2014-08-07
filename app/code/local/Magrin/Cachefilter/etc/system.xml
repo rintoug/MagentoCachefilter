@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--// app/code/local/Magrin/Cachefilter/etc/system.xml-->
+<config>
+  <sections>
+    <dev translate="label">
+      <groups>
+        <magrin_cache translate="label">
+          <label>Cache Clear String</label>
+          <frontend_type>text</frontend_type>
+          <sort_order>100</sort_order>
+          <show_in_default>1</show_in_default>
+          <show_in_website>1</show_in_website>
+          <fields>
+            <!-- New fields go here -->
+            <cache_string translate="label comment">
+              <label>Cache String</label>
+              <frontend_type>text</frontend_type>
+              <sort_order>1</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+            </cache_string>
+          </fields>
+        </magrin_cache>
+      </groups>
+    </dev>
+  </sections>
+</config>

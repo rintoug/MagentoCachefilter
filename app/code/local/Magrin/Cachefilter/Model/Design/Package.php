@@ -4,6 +4,14 @@ class SW_Core_Model_Design_Package extends Mage_Core_Model_Design_Package
 {
  
    /**
+     * Get the configuration variable
+     *
+     * @return string
+     */
+   protected function getCacheString() {
+	   return Mage::getStoreConfig('dev/magrin_cache/cache_string');
+   }
+   /**
      * Merge specified javascript files and return URL to the merged file on success
      *
      * @param $files
@@ -17,7 +25,7 @@ class SW_Core_Model_Design_Package extends Mage_Core_Model_Design_Package
             return '';
         }
         if ($this->_mergeFiles($files, $targetDir . DS . $targetFilename, false, null, 'js')) {
-            return Mage::getBaseUrl('media', Mage::app()->getRequest()->isSecure()) . 'js/' . $targetFilename;
+            return Mage::getBaseUrl('media', Mage::app()->getRequest()->isSecure()) . 'js/' . $targetFilename."?".$this->getCacheString();
         }
         return '';
     }
@@ -46,7 +54,7 @@ class SW_Core_Model_Design_Package extends Mage_Core_Model_Design_Package
         }
 
         // merge into target file
-        $targetFilename = md5(implode(',', $files) . "|{$hostname}|{$port}") . '.css';
+        $targetFilename = md5(implode(',', $files) . "|{$hostname}|{$port}") . '.css?'.$this->getCacheString();
         $mergeFilesResult = $this->_mergeFiles(
             $files, $targetDir . DS . $targetFilename,
             false,

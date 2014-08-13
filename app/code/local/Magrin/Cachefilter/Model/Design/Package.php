@@ -54,7 +54,7 @@ class SW_Core_Model_Design_Package extends Mage_Core_Model_Design_Package
         }
 
         // merge into target file
-        $targetFilename = md5(implode(',', $files) . "|{$hostname}|{$port}") . '.css?'.$this->getCacheString();
+        $targetFilename = md5(implode(',', $files) . "|{$hostname}|{$port}") . '.css';
         $mergeFilesResult = $this->_mergeFiles(
             $files, $targetDir . DS . $targetFilename,
             false,
@@ -62,7 +62,7 @@ class SW_Core_Model_Design_Package extends Mage_Core_Model_Design_Package
             'css'
         );
         if ($mergeFilesResult) {
-            return $baseMediaUrl . $mergerDir . '/' . $targetFilename;
+            return $baseMediaUrl . $mergerDir . '/' . $targetFilename.'?'.$this->getCacheString();;
         }
         return '';
     }
